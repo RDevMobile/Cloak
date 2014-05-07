@@ -15,7 +15,7 @@ public class signupandlogin extends ActionBarActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                setContentView(R.layout.signup);
+                setContentView(R.layout.login);
             }
         });
     }

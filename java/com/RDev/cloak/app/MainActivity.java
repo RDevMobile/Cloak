@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-public void Signup(View view) {
+public void Signup(View v) {
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setMessage("Cloak is currently not accepting new members VIA app because it is in a Pre-Alpha stage. If you would to become a beta tester to be able to use the app please go to http://www.rdevmobile.com")
