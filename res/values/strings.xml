@@ -8,5 +8,6 @@
     <string name="participate">Yes</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="adminemail">admin@admin.com</string>
 
 </resources>
