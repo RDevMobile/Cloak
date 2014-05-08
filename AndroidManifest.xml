@@ -10,7 +10,9 @@
         <activity
             android:name="com.RDev.cloak.app.MainActivity"
             android:label="@string/app_name" >
-            <activity android:label="Cloak" android:name="com.RDev.cloak.app.signupandlogin"/>
+        <activity
+            android:name="com.RDev.cloak.app.signuplogin"
+            android:label="Cloak" ></activity>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
