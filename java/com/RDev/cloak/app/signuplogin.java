@@ -22,6 +22,8 @@ public class signuplogin extends Activity {
     String passwordtxt;
     EditText password;
     EditText Email;
+    String usertxt;
+    EditText user;
 
     protected void onCreate(Bundle savedInstanceState) {
         Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
@@ -29,14 +31,19 @@ public class signuplogin extends Activity {
         setContentView(R.layout.signup);
         Email = (EditText) findViewById(R.id.editText);
         password = (EditText) findViewById(R.id.editText2);
+        user = (EditText) findViewById(R.id.editText3);
 
         signup = (Button) findViewById(R.id.button);
         signup.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 ParseUser user = new ParseUser();
-                user.setEmail(Emailtxt);
+                user.setUsername("Administrator");
                 user.setPassword(passwordtxt);
+                user.setEmail(Emailtxt);
+
+
+
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
@@ -46,13 +53,15 @@ public class signuplogin extends Activity {
 
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
+                        setContentView(R.layout.login);
                         }else{
                             Context context = getApplicationContext();
-                            CharSequence text = "SignUp has Failed. Error Code: Unknown";
+                            CharSequence text = "There was an error!";
                             int duration = Toast.LENGTH_SHORT;
 
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
+                            e.printStackTrace();
                         }
                     }
                 });
@@ -61,6 +70,7 @@ public class signuplogin extends Activity {
             {
                 Emailtxt = Email.getText().toString();
                 passwordtxt = password.getText().toString();
+                usertxt = user.getText().toString();
             }
 
         });

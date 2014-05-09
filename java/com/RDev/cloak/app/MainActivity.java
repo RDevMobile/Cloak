@@ -34,7 +34,8 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 public void Login(View view) {
-    setContentView(R.layout.login);
+   Intent intent2 = new Intent(this, login.class);
+    startActivity(intent2);
 }
 
     public void logintocloak(View view) {
