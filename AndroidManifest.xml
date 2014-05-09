@@ -7,18 +7,15 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.RDev.cloak.app.MainActivity"
-            android:label="@string/app_name" >
-        <activity
-            android:name="com.RDev.cloak.app.signuplogin"
-            android:label="Cloak" ></activity>
+        <activity android:name="com.RDev.cloak.app.MainActivity" android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+    <activity android:name="com.RDev.cloak.app.signuplogin" android:label="@string/app_name" >
+    </activity>
     </application>
 
 </manifest>
