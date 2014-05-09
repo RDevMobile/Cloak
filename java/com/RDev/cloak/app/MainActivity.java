@@ -1,21 +1,18 @@
 package com.RDev.cloak.app;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,23 +29,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
-
-public void Signup(View v) {
-
-    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setMessage("Cloak is currently not accepting new members VIA app because it is in a Pre-Alpha stage. If you would to become a beta tester to be able to use the app please go to http://www.rdevmobile.com")
-            .setCancelable(false)
-            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    //do things
-                }
-            });
-    AlertDialog alert = builder.create();
-    alert.show();
-
-}
-
+    public void Signup(View v) {
+        Intent intent = new Intent(this, signuplogin.class);
+        startActivity(intent);
+    }
 public void Login(View view) {
     setContentView(R.layout.login);
 }
