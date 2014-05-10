@@ -38,7 +38,12 @@ String passwordtxt;
                 ParseUser.logInInBackground(usertxt, passwordtxt, new LogInCallback() {
                     public void done(ParseUser user, ParseException e) {
                         if (user != null) {
+                            Context context = getApplicationContext();
+                            CharSequence text = "Login successful!";
+                            int duration = Toast.LENGTH_SHORT;
 
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
                             Intent intent = new Intent(login.this, dashboard.class);
                             startActivity(intent);
 

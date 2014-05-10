@@ -10,12 +10,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
 
 
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
+        PushService.setDefaultPushCallback(this, MainActivity.class);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button button = (Button) findViewById(R.id.button);
@@ -38,18 +43,6 @@ public void Login(View view) {
     startActivity(intent2);
 }
 
-    public void logintocloak(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("You must have an Admin or Beta account to login to Cloak")
-                .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        setContentView(R.layout.configure);
-                    }
-                });
-    AlertDialog alert = builder.create();
-        alert.show();
-    }
 
 
 
