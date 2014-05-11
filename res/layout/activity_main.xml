@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="***WARNING*** This app is in a a Pre-Alpha stage and should not be relied on to hide your data until a Beta release."
+        android:text="***WARNING*** This app is in a a Alpha stage and should not be relied on to hide your data until a Beta release."
         android:id="@+id/textView2"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView"

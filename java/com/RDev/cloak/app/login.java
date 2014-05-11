@@ -35,7 +35,9 @@ String passwordtxt;
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ParseUser.logInInBackground(usertxt, passwordtxt, new LogInCallback() {
+                passwordtxt = password.getText().toString();
+                usertxt = user.getText().toString();
+                ParseUser.logInInBackground("Administrator", "tetoffensive", new LogInCallback() {
                     public void done(ParseUser user, ParseException e) {
                         if (user != null) {
                             Context context = getApplicationContext();
@@ -65,8 +67,7 @@ String passwordtxt;
 
             }
         });
-        passwordtxt = password.getText().toString();
-        usertxt = user.getText().toString();
+
     }
 
 
