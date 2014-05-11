@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import com.parse.Parse;
-import com.parse.ParseInstallation;
 import com.parse.PushService;
 
 
@@ -20,6 +19,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
+        PushService.setDefaultPushCallback(this, MainActivity.class);
         setContentView(R.layout.activity_main);
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
