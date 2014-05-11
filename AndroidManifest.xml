@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <permission android:protectionLevel="signature"
         android:name="com.RDev.cloak.app.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.RDev.cloak.app.permission.C2D_MESSAGE" />
@@ -25,9 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name="com.RDev.cloak.app.signuplogin" android:label="@string/app_name" />
-    <activity android:name="com.RDev.cloak.app.login" android:label="Cloak" >
-    </activity>
+        <activity android:name="com.RDev.cloak.app.signuplogin" android:label="@string/app_name" />
+        <activity android:name="com.RDev.cloak.app.login" android:label="Cloak" >
+        </activity>
+        <activity android:name="com.RDev.cloak.app.dashboard" android:label="Cloak" />
         <service android:name="com.parse.PushService" />
         <receiver android:name="com.parse.ParseBroadcastReceiver">
             <intent-filter>
@@ -41,6 +43,12 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
                 <category android:name="com.RDev.cloak.app" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.RDev.cloak.app.smslistener" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" >
+                </action>
             </intent-filter>
         </receiver>
     </application>
