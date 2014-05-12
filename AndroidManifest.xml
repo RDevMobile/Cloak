@@ -30,6 +30,7 @@
         <activity android:name="com.RDev.cloak.app.login" android:label="Cloak" >
         </activity>
         <activity android:name="com.RDev.cloak.app.dashboard" android:label="Cloak" />
+        <activity android:name="com.RDev.cloak.app.logout" android:label="Cloak" />
         <service android:name="com.parse.PushService" />
         <receiver android:name="com.parse.ParseBroadcastReceiver">
             <intent-filter>
@@ -45,7 +46,7 @@
                 <category android:name="com.RDev.cloak.app" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.RDev.cloak.app.smslistener" >
+        <receiver android:name=".smslistener" >
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" >
                 </action>

@@ -10,5 +10,6 @@
     <string name="yes">Yes</string>
     <string name="adminemail">admin@admin.com</string>
     <string name="must_config">Before you can change settings, you must configure the app!</string>
+    <string name="already_config">User already signed in!</string>
 
 </resources>
