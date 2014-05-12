@@ -1,15 +1,21 @@
 package com.RDev.cloak.app;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.support.v7.app.ActionBar;
 
 
-public class dashboard extends Activity {
+public class dashboard extends ActionBarActivity {
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.show();
         setContentView(R.layout.dashboard);
 
 

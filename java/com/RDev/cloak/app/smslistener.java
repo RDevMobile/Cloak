@@ -1,5 +1,6 @@
 package com.RDev.cloak.app;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -34,9 +35,9 @@ public class smslistener extends BroadcastReceiver {
                 String word2 = "Beer";
                 String word3 = "Pot";
                 String word4 = "pot";
-                String message = messages[0].getMessageBody();
+                String message = messages[1].getMessageBody();
                 if (message == word1) {
-                    CharSequence text = "Message contained the word Beer and was hidden. Go to settings to change this feature.";
+                    CharSequence text = "Message contained the word beer and was hidden. Go to settings to change this feature.";
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
@@ -48,13 +49,13 @@ public class smslistener extends BroadcastReceiver {
                     toast.show();
                 }
                 if (message == word3) {
-                    CharSequence text = "Message contained the word Beer and was hidden. Go to settings to change this feature.";
+                    CharSequence text = "Message contained the word Pot and was hidden. Go to settings to change this feature.";
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
-                if (message == word3) {
-                    CharSequence text = "Message contained the word Beer and was hidden. Go to settings to change this feature.";
+                if (message == word4) {
+                    CharSequence text = "Message contained the word pot and was hidden. Go to settings to change this feature.";
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();

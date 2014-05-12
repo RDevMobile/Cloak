@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import com.parse.Parse;
+import com.parse.ParseUser;
 import com.parse.PushService;
 
 
@@ -22,6 +23,15 @@ public class MainActivity extends Activity {
         Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
         PushService.setDefaultPushCallback(this, MainActivity.class);
         setContentView(R.layout.activity_main);
+        final ParseUser user = ParseUser.getCurrentUser();
+        if (user != null) {
+            Toast.makeText(getBaseContext(), R.string.already_config,
+                    Toast.LENGTH_LONG).show();
+            Intent dash = new Intent(this, dashboard.class);
+            startActivity(dash);
+        } else {
+            setContentView(R.layout.activity_main);
+        }
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -68,6 +78,14 @@ public void Login(View view) {
             Toast.makeText(getBaseContext(), R.string.must_config,
                     Toast.LENGTH_LONG).show();
         }
+        if (id == R.id.action_logout) {
+            Intent intent3 = new Intent(this, logout.class);
+            startActivity(intent3);
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
+
+
 }

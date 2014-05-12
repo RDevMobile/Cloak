@@ -27,6 +27,7 @@ public class signuplogin extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
         super.onCreate(savedInstanceState);
+        getActionBar().show();
         setContentView(R.layout.signup);
         Email = (EditText) findViewById(R.id.editText);
         password = (EditText) findViewById(R.id.editText2);
