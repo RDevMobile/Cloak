@@ -10,9 +10,8 @@ public class logout extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActionBar().show();
         ParseUser.logOut();
-        Intent intent = new Intent(this, login.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
     }

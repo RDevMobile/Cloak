@@ -23,19 +23,18 @@ public class MainActivity extends Activity {
         Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
         PushService.setDefaultPushCallback(this, MainActivity.class);
         setContentView(R.layout.activity_main);
-        final ParseUser user = ParseUser.getCurrentUser();
-        if (user != null) {
-            Toast.makeText(getBaseContext(), R.string.already_config,
-                    Toast.LENGTH_LONG).show();
-            Intent dash = new Intent(this, dashboard.class);
-            startActivity(dash);
-        } else {
-            setContentView(R.layout.activity_main);
-        }
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                setContentView(R.layout.configure);
+                final ParseUser user = ParseUser.getCurrentUser();
+                if (user != null) {
+                    Toast.makeText(getBaseContext(), R.string.already_config,
+                            Toast.LENGTH_LONG).show();
+                    Intent dash = new Intent(MainActivity.this, dashboard.class);
+                    startActivity(dash);
+                } else {
+                    setContentView(R.layout.configure);
+                }
 
 
             }
