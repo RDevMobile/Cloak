@@ -31,35 +31,7 @@ public class smslistener extends BroadcastReceiver {
                 if (messages.length > -1) {
                     Toast.makeText(context, "Message recieved: " + messages[0].getMessageBody(), 7000).show();
                 }
-                String word1 = "beer";
-                String word2 = "Beer";
-                String word3 = "Pot";
-                String word4 = "pot";
-                String message = messages[1].getMessageBody();
-                if (message == word1) {
-                    CharSequence text = "Message contained the word beer and was hidden. Go to settings to change this feature.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-                if (message == word2) {
-                    CharSequence text = "Message contained the word Beer and was hidden. Go to settings to change this feature.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-                if (message == word3) {
-                    CharSequence text = "Message contained the word Pot and was hidden. Go to settings to change this feature.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-                if (message == word4) {
-                    CharSequence text = "Message contained the word pot and was hidden. Go to settings to change this feature.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
+
             }
         }
     }
