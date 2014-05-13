@@ -9,8 +9,8 @@ feel free to contact dev@rdevmobile.com we are always looking for more devs.
 
 
 
-RDevMobile:
+Developers:
 
 	Ross Epstein
 	Alex Carson
-	Jonathan Fennel
+	
