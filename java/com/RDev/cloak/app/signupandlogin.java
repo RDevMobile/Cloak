@@ -9,7 +9,6 @@ import android.widget.Button;
 public class signupandlogin extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActionBar().show();
         setContentView(R.layout.configure);
 
         Button button = (Button) findViewById(R.id.button);

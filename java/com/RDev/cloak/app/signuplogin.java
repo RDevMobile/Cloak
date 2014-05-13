@@ -25,9 +25,7 @@ public class signuplogin extends Activity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
-        Parse.initialize(this, "xgsso9bGb2buDFUcIsGY2tGXYUTVXlBKHIqc496i", "lFGorxlMddZv2TRbkp0aGfLSi1CHDxSe2PRS5c4u");
         super.onCreate(savedInstanceState);
-        getActionBar().show();
         setContentView(R.layout.signup);
         Email = (EditText) findViewById(R.id.editText);
         password = (EditText) findViewById(R.id.editText2);
@@ -50,19 +48,19 @@ public class signuplogin extends Activity {
                     public void done(ParseException e) {
                         if (e == null) {
                             Context context = getApplicationContext();
-                            CharSequence text = "You are now a Beta Tester for Cloak. Please Login.";
+                            CharSequence text = "You are now a Beta Tester for Cloak.";
                             int duration = Toast.LENGTH_SHORT;
-
-                            Toast toast = Toast.makeText(context, text, duration);
+                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
-                        setContentView(R.layout.login);
+                            Intent intent2 = new Intent(signuplogin.this, login.class);
+                            startActivity(intent2);
                         }else{
-                            Context context = getApplicationContext();
+                            Context context1 = getApplicationContext();
                             CharSequence text = "There was an error!";
-                            int duration = Toast.LENGTH_SHORT;
+                            int duration1 = Toast.LENGTH_SHORT;
 
-                            Toast toast = Toast.makeText(context, text, duration);
-                            toast.show();
+                            Toast toast1 = Toast.makeText(context1, text, duration1);
+                            toast1.show();
                             e.printStackTrace();
                         }
                     }
