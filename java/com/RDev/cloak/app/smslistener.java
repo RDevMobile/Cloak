@@ -15,6 +15,7 @@ public class smslistener extends BroadcastReceiver {
 
     private static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
     private static final String TAG = "SMSBroadcastReceiver";
+    String msgBody;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -30,6 +31,11 @@ public class smslistener extends BroadcastReceiver {
                 }
                 if (messages.length > -1) {
                     Toast.makeText(context, "Message recieved: " + messages[0].getMessageBody(), 7000).show();
+                    msgBody = messages[0].getMessageBody();
+                        if (msgBody.equals(msgWords[1])) {
+                            Toast.makeText(context, "Cloak Average Broken! Hiding Text Messages" + messages[0].getMessageBody(), 5000).show();
+                        }
+                    
                 }
 
             }
